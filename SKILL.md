@@ -55,3 +55,32 @@ Return the files/crawl identifiers and known limitations. The caller then valida
 Path/permission/schema errors need a concrete correction, not repeated calls or fallback defaults. An unsupported tool receives no retry. Config-load failures use the immediate manual route above; a timed-out load remains unverified and the user checks current UI state before loading again. Only safe transient reads may receive at most two retries with backoff. MCP 429 and website HTTP 429 are different observations; preserve the source and obey Retry-After when supplied. This skill does not automatically recrawl URLs or manage the user's running crawl.
 
 No automatic cleanup, website modification or GitHub publishing is part of a skill invocation. Keep credentials and local endpoint/storage/retention settings outside shared profiles. No third-party Python library is required by this instruction-only workflow.
+
+## Excel output language
+
+Write all generated Excel report narratives, analyses, findings, recommendations,
+report titles, worksheet names, table headers, chart labels and notes in English,
+regardless of the input or conversation language.
+
+Preserve original source evidence exactly, including Chinese keywords, page
+titles, descriptions, headings, quoted page content, URLs and paths. Chinese
+text in source-evidence fields is permitted. Do not translate, remove or rewrite
+evidence merely to make a workbook appear English-only. Use English for the
+generated explanations surrounding that evidence.
+
+Set report-generation language to English. If a reused configuration specifies
+Chinese, use an English run-specific setting without modifying the original
+input configuration. Prepare narrative fields in English before rendering.
+
+Before delivery, reopen every Excel workbook and inspect generated narrative
+and presentation fields for Chinese text; correct those fields and regenerate
+when needed. Inspect source-evidence fields separately and preserve their text.
+Do not apply a blanket Chinese-character removal or replacement to a workbook.
+Preserve audit logic, thresholds, result codes, evidence provenance and
+machine-readable field keys. This rule governs Excel deliverables and the
+narrative inputs used to build them; it does not require English chat replies
+or translation of internal documentation.
+
+This preparation skill does not generate an audit workbook. Pass the English
+Excel-report requirement to downstream audit skills; preserve source locale
+settings and the Screaming Frog profiles unchanged.
